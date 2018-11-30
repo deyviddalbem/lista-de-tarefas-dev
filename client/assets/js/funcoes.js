@@ -37,7 +37,7 @@ function montarPainel() {
                 response.forEach(function (item) {
                     // Criando o cartão
                     let cartao = document.createElement('div');
-                    cartao.className = 'card';
+                    cartao.className = 'card card-expirado card-realizado';
                     cartao.innerHTML = `
                                 <div class="card-body">
                                 <div>

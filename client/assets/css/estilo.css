@@ -23,6 +23,12 @@
   fill:#FFF;
   color:#FFF;
 }
+.card-expirado{
+  background-color: red;
+}
+.card-realizado{
+  background-color: greenyellow;
+}
 
 
 #btn-buscar::after{
