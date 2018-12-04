@@ -115,9 +115,9 @@ exports.inserir = (req, res) => {
   const tarefa = {};
   tarefa.descricao = req.body.descricao;
   tarefa.data = req.body.data;
-  tarefa.realizado = false;
+  tarefa.realizado = req.body.realizado;
 
-  const query = 'insert into tarefas (descricao, data) values (?, ?)'
+  const query = 'insert into tarefas (descricao, data, realizado) values (?, ?, ?)'
 
   conexao.query(query, [tarefa.descricao, tarefa.data, tarefa.realizado], (err, rows) => {
     if (err) {

@@ -37,7 +37,7 @@ function montarPainel() {
                 response.forEach(function (item) {
                     // Criando o cartão
                     let cartao = document.createElement('div');
-                    cartao.className = 'card card-expirado card-realizado';
+                    cartao.className = 'card';
                     cartao.innerHTML = `
                                 <div class="card-body">
                                 <div>
@@ -48,6 +48,17 @@ function montarPainel() {
                             `;
                     // Adicionando o cartão no painel de tarefas
                     painelTarefas.appendChild(cartao);
+
+                    let partesData = dataToString(item.data).split("/");
+                    let data = new Date(partesData[2], partesData[1] - 1, partesData[0]);
+                    if(item.realizado == 1){
+                        cartao.classList.add('td-lt');
+                    }
+                    if(data < new Date() && item.realizado == 0){
+                        cartao.classList.add('card-expirado');
+                    }
+
+                
 
                     cartao.addEventListener('click', function(event){
                         montarFormularioAlterar(item.id);
@@ -199,7 +210,21 @@ document.querySelector('#btn-deletar').addEventListener('click', function(event)
 
 
 
+function getData(){
+    let mData = new Date();
+    console.log(mData.getDay());
+    console.log(mData.getFullYear());
+}
 
+function compararData(dataAnterior){
+    let partesData = dataAnterior.split("/");
+    let data = new Date(partesData[2], partesData[1] - 1, partesData[0]);
+    if(data > new Date()){
+        alert('maior');
+    }else{
+        alert('menor');
+    }
+}
 
 
 

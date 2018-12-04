@@ -29,6 +29,9 @@
 .card-realizado{
   background-color: greenyellow;
 }
+.td-lt{
+  text-decoration: line-through;
+}
 
 
 #btn-buscar::after{
@@ -50,6 +53,7 @@
   border: 1px solid #ced4da;
   border-radius: .25rem;
   padding: 0 !important;
+  text-
 }
 @media (max-width: 576px){
   #btn-buscar::after{
