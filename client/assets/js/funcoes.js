@@ -49,13 +49,24 @@ function montarPainel() {
                     // Adicionando o cartão no painel de tarefas
                     painelTarefas.appendChild(cartao);
 
+                    //Quebra a data recebida do item em partes
                     let partesData = dataToString(item.data).split("/");
+
+                    //Monta nova data com as partes da data do item
                     let data = new Date(partesData[2], partesData[1] - 1, partesData[0]);
+
+                    //Se o item tiver sido realizado....
                     if(item.realizado == 1){
+                        //marca a tarefa como realizada
                         cartao.classList.add('td-lt');
                     }
+
+                    //Se a data do item for menor que a data atual E não tiver sido realizada....
                     if(data < new Date() && item.realizado == 0){
+                        //pinta o cartão de vermelho
                         cartao.classList.add('card-expirado');
+                        //muda a fonte para branco
+                        cartao.classList.add('tc-w');
                     }
 
                 
