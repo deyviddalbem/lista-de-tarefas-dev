@@ -24,13 +24,16 @@
   color:#FFF;
 }
 .card-expirado{
-  background-color: red;
+  background-color: rgb(230, 86, 86);
 }
 .card-realizado{
   background-color: greenyellow;
 }
 .td-lt{
   text-decoration: line-through;
+}
+.tc-w{
+  color: white;
 }
 
 
